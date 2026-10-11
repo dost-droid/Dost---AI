@@ -1,0 +1,19 @@
+DOST AI v0.4 — Phone se cloud APK build karne ke steps
+
+Important: is ZIP mein Android source code hai, APK nahi. APK tab milegi jab GitHub Actions par build successful ho.
+
+1. ZIP ko phone mein download karke extract karo.
+2. GitHub par naya repository banao, naam DOST-AI rakh sakte ho.
+3. Extracted folder ke andar ki saari files aur folders repository ke root mein upload karo. ZIP file ko akela upload karna kaafi nahi.
+4. `.github/workflows/build-apk.yml` repository mein maujood hona chahiye.
+5. GitHub ke Actions tab mein “Build DOST AI debug APK” kholo aur “Run workflow” dabao. Agar Actions disabled hon to enable karo.
+6. Green successful run ke baad run page par Artifacts se `DOST-AI-debug-APK` download karo.
+7. Artifact ZIP extract karo; `app-debug.apk` milegi. Android security prompt par install permission deni pad sakti hai.
+8. DOST kholkar microphone permission do aur “DOST ko Default Assistant banao” dabakar Android prompt confirm karo.
+9. Nothing Phone (2) par commands test karo. Build success ka matlab device par har feature tested hona nahi hai.
+
+Agar build fail ho, Actions run ke logs ka screenshot/text share karo. Build error ko fix karke dobara run karna hoga.
+
+Current source features: Hindi speech input/TTS, default assistant role request, YouTube/WhatsApp/Maps/Google shortcuts, time/date/battery, dialer, alarm, contacts, music, Bluetooth/Wi-Fi/settings.
+
+Not implemented: custom always-listening “Hey Dost” wake word, connected AI cloud brain, voice biometric unlock, Galaxy Watch/earbuds companion. Android source alone se in features ko magically activate nahi kiya ja sakta; inke liye extra engine/backend and device tests chahiye. UPI/banking transaction control intentionally excluded.
